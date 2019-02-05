@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Vaimo_TestModule::testmodule" resource="Vaimo_TestModule::testmodule" module="Vaimo_TestModule" title="Account Manager" sortOrder="20"/>
+        <add id="Vaimo_TestModule::get" title="Account Managers" module="Vaimo_TestModule" sortOrder="10" action="vaimo_testmodule/get" resource="Vaimo_TestModule::get" parent="Vaimo_TestModule::testmodule"/>
+    </menu>
+</config>

@@ -65,6 +65,7 @@ class InstallData implements InstallDataInterface
                 $this->_accountManagerFactory->create()->addData($row)->save();
 
         }
+        //old implementation
 //        foreach($managers as $rowIndex => $data) {
 //            if($data[0] == "Postal Sector"){
 //                continue;

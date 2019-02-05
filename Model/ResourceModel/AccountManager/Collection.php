@@ -1,6 +1,6 @@
 <?php
 
-namespace Vaimo\TestModule\Model\ResourceModel\Account_Manager;
+namespace Vaimo\TestModule\Model\ResourceModel\AccountManager;
 
 
 class Collection extends  \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection

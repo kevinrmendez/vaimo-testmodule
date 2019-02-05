@@ -39,18 +39,44 @@ class InstallData implements InstallDataInterface
         //$directory = $this->moduleReader->getModuleDir('Setup', 'Vaimo_TestModule');
         $path = $this->filesystem->getDirectoryRead('app')->getAbsolutePath();
         $managers = $this->csv->getData($path.'code/Vaimo/TestModule/Setup/account_managers.csv');
-        foreach($managers as $rowIndex => $data) {
-            if($data[0] == "Postal Sector"){
+        $managersArray = array();
+        foreach($managers as $value) {
+            if($value[0] == "Postal Sector"){
                 continue;
             }else {
+                if (!array_key_exists($value[1], $managersArray)) {
+                    $managersArray[$value[1]] = array();
+                    $managersArray[$value[1]][] = [$value[0]];
+                } else {
+                    $managersArray[$value[1]][] = [$value[0]];
+                }
+            }
+        }
+        foreach($managersArray as $manager => $data) {
+            $postal_section_array = array();
+            foreach ($data as $value){
+                array_push($postal_section_array, $value[0]);
+            }
+            $postal_section = implode(",",$postal_section_array);
                 $row = [
-                    'postal_section' => $data[0],
-                    'account_manager' => $data[1]
+                    'postal_section' => $postal_section,
+                    'account_manager' => $manager
                 ];
                 $this->_accountManagerFactory->create()->addData($row)->save();
 
-            }
         }
+//        foreach($managers as $rowIndex => $data) {
+//            if($data[0] == "Postal Sector"){
+//                continue;
+//            }else {
+//                $row = [
+//                    'postal_section' => $data[0],
+//                    'account_manager' => $data[1]
+//                ];
+//                $this->_accountManagerFactory->create()->addData($row)->save();
+//
+//            }
+//        }
 
 
        //$this->_accountManagerFactory->create()->addData($data)->save();

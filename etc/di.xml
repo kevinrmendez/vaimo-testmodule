@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="vaimo_testmodule_get_listing_data_source" xsi:type="string">Vaimo\TestModule\Model\ResourceModel\AccountManager\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Vaimo\TestModule\Model\ResourceModel\AccountManager\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">account_manager</argument>
+            <argument name="resourceModel" xsi:type="string">Vaimo\TestModule\Model\ResourceModel\AccountManager</argument>
+        </arguments>
+    </virtualType>
+</config>

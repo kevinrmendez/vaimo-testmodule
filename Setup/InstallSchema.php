@@ -32,6 +32,18 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface{
                 ->setOption('charset','utf8');
             $conn->createTable($table);
         }
+        if ($conn->tableColumnExists('sales_order_grid', 'account_manager') === false) {
+            $conn
+                ->addColumn(
+                    $setup->getTable('sales_order_grid'),
+                    'account_manager',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'comment' => 'Account Manager Column'
+                    ]
+                );
+        }
         $setup->endSetup();
     }
 }

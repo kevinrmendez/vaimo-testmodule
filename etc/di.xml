@@ -12,4 +12,12 @@
             <argument name="resourceModel" xsi:type="string">Vaimo\TestModule\Model\ResourceModel\AccountManager</argument>
         </arguments>
     </virtualType>
+    <!-- Sync the column "my_column" between the sales_order and sales_order_grid tables -->
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns">
+                <item name="account_manager" xsi:type="string">sales_order.account_manager</item>
+            </argument>
+        </arguments>
+    </virtualType>
 </config>

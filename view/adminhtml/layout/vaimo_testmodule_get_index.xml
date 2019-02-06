@@ -3,7 +3,7 @@
     <update handle="styles"/>
     <body>
     <referenceContainer name="content">
-        <block class="Vaimo\TestModule\Block\Adminhtml\Get" name="vaimo_post_grid">
+        <block class="Vaimo\TestModule\Block\Adminhtml\AccountManager" name="vaimo_post_grid">
             <block class="Magento\Backend\Block\Widget\Grid" name="vaimoa_post_grid.grid" as="grid">
                 <arguments>
                     <argument name="id" xsi:type="string">id</argument>
@@ -30,7 +30,7 @@
                     <block class="Magento\Backend\Block\Widget\Grid\Column" as="postal_section">
                         <arguments>
                             <argument name="header" xsi:type="string" translate="true">Postal Section</argument>
-                            <argument name="index" xsi:type="string">name</argument>
+                            <argument name="index" xsi:type="string">postal_section</argument>
                             <argument name="type" xsi:type="string">text</argument>
                             <argument name="column_css_class" xsi:type="string">col-id</argument>
                             <argument name="header_css_class" xsi:type="string">col-id</argument>
@@ -39,8 +39,8 @@
                     <block class="Magento\Backend\Block\Widget\Grid\Column" as="account_manager">
                         <arguments>
                             <argument name="header" xsi:type="string" translate="true">Account Manager</argument>
-                            <argument name="index" xsi:type="string">created_at</argument>
-                            <argument name="type" xsi:type="string">date</argument>
+                            <argument name="index" xsi:type="string">account_manager</argument>
+                            <argument name="type" xsi:type="string">text</argument>
                             <argument name="column_css_class" xsi:type="string">col-id</argument>
                             <argument name="header_css_class" xsi:type="string">col-id</argument>
                         </arguments>

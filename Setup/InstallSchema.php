@@ -43,6 +43,17 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface{
                         'comment' => 'Account Manager Column'
                     ]
                 );
+
+            $conn
+                ->addColumn(
+                $setup->getTable('sales_order'),
+                'account_manager',
+                [
+                    'type' => Table::TYPE_TEXT,
+                    'length' => 255,
+                    'comment' => 'Account Manager Column'
+                ]
+            );
         }
         $setup->endSetup();
     }

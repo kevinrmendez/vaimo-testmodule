@@ -12,7 +12,7 @@
             <argument name="resourceModel" xsi:type="string">Vaimo\TestModule\Model\ResourceModel\AccountManager</argument>
         </arguments>
     </virtualType>
-    <!-- Sync the column "my_column" between the sales_order and sales_order_grid tables -->
+    <!-- SALES ORDER GRID ACCOUNT MANAGER COLUMN -->
     <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
         <arguments>
             <argument name="columns">
@@ -20,4 +20,7 @@
             </argument>
         </arguments>
     </virtualType>
+    <!--<type name="Magento\Sales\Model\Order">-->
+    <!--<plugin name="before_order_save" type="Vaimo\TestModule\Plugin\OrderPlugin" sortOrder="1" disabled="false"/>-->
+    <!--</type>-->
 </config>

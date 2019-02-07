@@ -20,7 +20,16 @@
             </argument>
         </arguments>
     </virtualType>
-    <!--<type name="Magento\Sales\Model\Order">-->
-    <!--<plugin name="before_order_save" type="Vaimo\TestModule\Plugin\OrderPlugin" sortOrder="1" disabled="false"/>-->
-    <!--</type>-->
+    <!-- SAVE DATA FROM SALES_ORDER TO SALES_ORDER_GRID -->
+    <!--<virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">-->
+        <!--<arguments>-->
+            <!--<argument name="columns" xsi:type="array">-->
+                <!--<item name="account_manager" xsi:type="string">sales_order.account_manager</item>-->
+            <!--</argument>-->
+        <!--</arguments>-->
+    <!--</virtualType>-->
+    <!-- PLUGIN -->
+    <type name="Magento\Sales\Model\Order">
+    <plugin name="before_order_save" type="Vaimo\TestModule\Plugin\OrderPlugin" sortOrder="1" disabled="true"/>
+    </type>
 </config>

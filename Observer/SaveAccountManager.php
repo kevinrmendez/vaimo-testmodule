@@ -60,5 +60,4 @@ class SaveAccountManager implements \Magento\Framework\Event\ObserverInterface
         }
         return $manager;
     }
-
 }

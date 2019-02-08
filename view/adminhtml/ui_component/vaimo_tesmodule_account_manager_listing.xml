@@ -1,0 +1,121 @@
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">vaimo_tesmodule_account_manager_listing.vaimo_testmodule_get_listing_data_source</item>
+            <item name="deps" xsi:type="string">vaimo_tesmodule_account_manager_listing.vaimo_testmodule_get_listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">spinner_columns</item>
+    </argument>
+    <dataSource name="nameOfDataSource">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">vaimo_testmodule_get_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <columns name="spinner_columns">
+        <!--<argument name="data" xsi:type="array">-->
+            <!--<item name="config" xsi:type="array">-->
+                <!--<item name="editorConfig" xsi:type="array">-->
+                    <!--<item name="selectProvider" xsi:type="string">vaimo_tesmodule_account_manager_listing.vaimo_tesmodule_account_manager_listing.spinner_columns.ids</item>-->
+                    <!--<item name="enabled" xsi:type="boolean">true</item>-->
+                    <!--<item name="indexField" xsi:type="string">entity_id</item>-->
+                    <!--<item name="clientConfig" xsi:type="array">-->
+                        <!--<item name="saveUrl" xsi:type="url" path="my_product/product/inlineEdit"/>-->
+                        <!--<item name="validateBeforeSave" xsi:type="boolean">false</item>-->
+                    <!--</item>-->
+                <!--</item>-->
+                <!--<item name="childDefaults" xsi:type="array">-->
+                    <!--<item name="fieldAction" xsi:type="array">-->
+                        <!--<item name="provider" xsi:type="string">product_listing.product_listing.product_columns_editor</item>-->
+                        <!--<item name="target" xsi:type="string">startEdit</item>-->
+                        <!--<item name="params" xsi:type="array">-->
+                            <!--<item name="0" xsi:type="string">${ $.$data.rowIndex }</item>-->
+                            <!--<item name="1" xsi:type="boolean">true</item>-->
+                        <!--</item>-->
+                    <!--</item>-->
+                <!--</item>-->
+            <!--</item>-->
+        <!--</argument>-->
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">55</item>
+                    <item name="indexField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </selectionsColumn>
+        <column name="id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">id</item>
+                </item>
+            </argument>
+        </column>
+        <column name="postal_section">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="editor" xsi:type="array">
+                        <item name="editorType" xsi:type="string">text</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                    <item name="label" xsi:type="string" translate="true">postal section</item>
+                </item>
+            </argument>
+        </column>
+        <column name="account_manager">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="editor" xsi:type="array">
+                        <item name="editorType" xsi:type="string">text</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                    <item name="label" xsi:type="string" translate="true">account manager</item>
+                </item>
+            </argument>
+        </column>
+
+        <column name="order_limit">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="editor" xsi:type="array">
+                        <item name="editorType" xsi:type="string">text</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                    <item name="label" xsi:type="string" translate="true">order limit</item>
+                </item>
+            </argument>
+        </column>
+        <actionsColumn name="actions" class="Vaimo\TestModule\Ui\Component\Listing\Columns\Edit">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">120</item>
+                    <item name="indexField" xsi:type="string">faq_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+</listing>

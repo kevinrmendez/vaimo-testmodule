@@ -29,6 +29,12 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface{
                     255,
                     ['nullbale'=>false,'default'=>'']
                 )
+                ->addColumn(
+                    'order_limit',
+                    Table::TYPE_INTEGER,
+                    null,
+                    ['default' => 300]
+                )
                 ->setOption('charset','utf8');
             $conn->createTable($table);
         }

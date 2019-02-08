@@ -26,7 +26,7 @@ class SaveAccountManager implements \Magento\Framework\Event\ObserverInterface
 
         $order = $observer->getData('order');
         $subtotal = $order->getSubtotal();
-        $id = $order->getId();
+        //$id = $order->getId();
         $postal_code = $order->getBillingAddress()["postcode"];
 
         if ($subtotal > 10){

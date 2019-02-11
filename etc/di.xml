@@ -6,12 +6,21 @@
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="account_manager_data_source" xsi:type="string">Vaimo\TestModule\Model\ResourceModel\AccountManager\Collection</item>
+            </argument>
+        </arguments>
+    </type>
     <virtualType name="Vaimo\TestModule\Model\ResourceModel\AccountManager\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">account_manager</argument>
             <argument name="resourceModel" xsi:type="string">Vaimo\TestModule\Model\ResourceModel\AccountManager</argument>
         </arguments>
     </virtualType>
+
+
     <!-- SALES ORDER GRID ACCOUNT MANAGER COLUMN -->
     <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
         <arguments>
@@ -20,4 +29,10 @@
             </argument>
         </arguments>
     </virtualType>
+
+    <!--<virtualType name="Vaimo\TestModule\Model\DataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">-->
+        <!--<arguments>-->
+            <!--<argument name="collection" xsi:type="object" shared="false">Vaimo\TestModule\Model\ResourceModel\AccountManager\Collection</argument>-->
+        <!--</arguments>-->
+    <!--</virtualType>-->
 </config>

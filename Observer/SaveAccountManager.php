@@ -41,7 +41,8 @@ class SaveAccountManager implements \Magento\Framework\Event\ObserverInterface
 
         return $this;
     }
-    private function getAccountManager($postal_code){
+    private function getAccountManager($postal_code)
+    {
         //$this->accountManager;
         $collection = $this->accountManagerFactory->create()->getCollection();
         $manager = "";
@@ -50,11 +51,10 @@ class SaveAccountManager implements \Magento\Framework\Event\ObserverInterface
             $value;
 
             $postal_code_string = $value->getDataByKey("postal_section");
-            $postal_code_array = explode(",",$postal_code_string);
-            if(in_array($postal_code, $postal_code_array )){
+            $postal_code_array = explode(",", $postal_code_string);
+            if(in_array($postal_code, $postal_code_array )) {
                 $manager = $value->getDataByKey("account_manager");
-            }
-            else {
+            } else {
                 continue;
             }
         }

@@ -4,5 +4,6 @@
         <route id="vaimo_testmodule" frontName="vaimo_testmodule">
             <module name="Vaimo_TestModule"/>
         </route>
+
     </router>
 </config>

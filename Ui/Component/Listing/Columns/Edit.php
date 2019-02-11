@@ -11,8 +11,7 @@ namespace Vaimo\TestModule\Ui\Component\Listing\Columns;
 
 class Edit extends \Magento\Ui\Component\Listing\Columns\Column
 {
-    const URL_PATH_EDIT = 'your_route/your_controller/your_edit_action';
-    const URL_PATH_DELETE = 'your_route/your_controller/your_delete_action';
+    const URL_PATH_EDIT = 'vaimo_testmodule/accountmanager/edit';
     protected $urlBuilder;
 
     /**

@@ -9,7 +9,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface{
         $setup->startSetup();
         $conn = $setup->getConnection();
         $tableName = $setup->getTable('account_manager');
-        if($conn->isTableExists($tableName) != true){
+        if ($conn->isTableExists($tableName) != true) {
             $table = $conn->newTable($tableName)
                 ->addColumn(
                     'id',
@@ -35,7 +35,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface{
                     null,
                     ['default' => 300]
                 )
-                ->setOption('charset','utf8');
+                ->setOption('charset', 'utf8');
             $conn->createTable($table);
         }
         if ($conn->tableColumnExists('sales_order_grid', 'account_manager') === false) {
@@ -64,4 +64,3 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface{
         $setup->endSetup();
     }
 }
-?>

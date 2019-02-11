@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Vaimo\TestModule\Observer;
-
 
 class SaveAccountManager implements \Magento\Framework\Event\ObserverInterface
 {
@@ -26,33 +24,28 @@ class SaveAccountManager implements \Magento\Framework\Event\ObserverInterface
 
         $order = $observer->getData('order');
         $subtotal = $order->getSubtotal();
-        //$id = $order->getId();
+        $order_limit = 300;
         $postal_code = $order->getBillingAddress()["postcode"];
 
-        if ($subtotal > 10){
+        if( $subtotal > $order_limit )
+        {
             $account_manager =$this->getAccountManager($postal_code);
             $order->setData("account_manager", $account_manager);
             $order->save();
-
-
-
-
         }
-
         return $this;
     }
     private function getAccountManager($postal_code)
     {
-        //$this->accountManager;
         $collection = $this->accountManagerFactory->create()->getCollection();
         $manager = "";
 
         foreach ($collection as $value) {
             $value;
-
             $postal_code_string = $value->getDataByKey("postal_section");
             $postal_code_array = explode(",", $postal_code_string);
-            if(in_array($postal_code, $postal_code_array )) {
+            if (in_array( $postal_code, $postal_code_array ))
+            {
                 $manager = $value->getDataByKey("account_manager");
             } else {
                 continue;

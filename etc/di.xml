@@ -19,9 +19,6 @@
             <argument name="resourceModel" xsi:type="string">Vaimo\TestModule\Model\ResourceModel\AccountManager</argument>
         </arguments>
     </virtualType>
-
-
-    <!-- SALES ORDER GRID ACCOUNT MANAGER COLUMN -->
     <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
         <arguments>
             <argument name="columns">
@@ -30,9 +27,4 @@
         </arguments>
     </virtualType>
 
-    <!--<virtualType name="Vaimo\TestModule\Model\DataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">-->
-        <!--<arguments>-->
-            <!--<argument name="collection" xsi:type="object" shared="false">Vaimo\TestModule\Model\ResourceModel\AccountManager\Collection</argument>-->
-        <!--</arguments>-->
-    <!--</virtualType>-->
 </config>
